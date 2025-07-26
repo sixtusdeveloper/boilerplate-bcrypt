@@ -5,6 +5,12 @@ const bodyParser = require("body-parser");
 const fccTesting = require("./freeCodeCamp/fcctesting.js");
 const app = express();
 fccTesting(app);
+
+// Basic route for the home page
+app.get("/", (req, res) => {
+  res.send("Hello! Your bcrypt server is running successfully.");
+});
+
 const saltRounds = 12;
 const myPlaintextPassword = "sUperpassw0rd!";
 const someOtherPlaintextPassword = "pass123";
